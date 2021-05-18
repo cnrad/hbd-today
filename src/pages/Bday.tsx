@@ -23,7 +23,7 @@ const Bday = () => {
   if(!name || !from || !qColor || !["red", "green", "blue", "purple", "orange", "pink-blue"].includes(qColor)) return(
     <motion.div className="z-1 text-white bg-black w-screen h-screen flex flex-col items-center justify-center">
       <div className="z-2 text-5xl font-bold mb-8">
-        Error: Invalid/Missing query params
+        Error: Invalid/Missing query parameters
       </div>
       <button onClick={backHome} className="z-2 text-2xl hover:cursor-pointer hover:text-3xl transition-all">Return to Home</button>
       
@@ -102,7 +102,7 @@ const Bday = () => {
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Birthday,&nbsp;</motion.div>
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">{name}!</motion.div>
         </motion.div>
-        <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5, ease: "easeInOut"}}} className=" text-white z-2 text-xl md:text-2xl italic">From {from}</motion.div>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5, ease: "easeInOut"}}} className=" text-gray-100 z-2 text-xl md:text-2xl italic">From {from}</motion.div>
       </div>
       <ConfettiExplode angle="45" >
         <div className="absolute top-3/4 left-0" />

@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-// ADD FRAMER MOTION ON PAGE LOAD
-// CHANGE BACKGROUND ON COLOR SELECT, FADE/TRANSITION
-
 const Home = () => {
     let history = useHistory();
 
@@ -12,6 +9,7 @@ const Home = () => {
 
     let [dropdownOpen, setDropdownOpen] = useState(false);
     let [colorSelected, setColorSelected] = useState('Pink-Blue');
+    let [menuColor, setMenuColor] = useState('Pink-Blue');
     let [backgroundGradient, setBackgroundGradient] = useState("bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500");
 
     const errorBox = (msg:string) => {
@@ -67,9 +65,35 @@ const Home = () => {
             case "orange":
                 setBackgroundGradient("bg-gradient-to-br from-yellow-700 via-yellow-600 to-yellow-400");
                 break;
-                
+
             case "pink-blue":
                 setBackgroundGradient("bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500");
+                break;
+        }
+
+        switch(color) {
+            case "green":
+                setMenuColor("bg-green-600");
+                break;
+
+            case "red":
+                setMenuColor("bg-red-500");
+                break;
+
+            case "blue":
+                setMenuColor("bg-blue-600");
+                break;
+
+            case "purple":
+                setMenuColor("bg-purple-700");
+                break;
+
+            case "orange":
+                setMenuColor("bg-yellow-600");
+                break;
+
+            case "pink-blue":
+                setMenuColor("bg-purple-700");
                 break;
         }
     }, [colorSelected])
@@ -120,7 +144,7 @@ const Home = () => {
                 </div>
                 
                 {dropdownOpen ? 
-                <div id="dropdownOptions" className={`absolute mt-2 outline-none border-solid border-white border ${backgroundGradient} text-white text-xl w-40 items-center text-center justify-center`}>
+                <div id="dropdownOptions" className={`absolute mt-2 outline-none border-solid border-white border ${menuColor} text-white text-xl w-40 items-center text-center justify-center`}>
                     {
                     colorArr.map((color) => <div className="select-none py-2 cursor-pointer hover:bg-white hover:bg-opacity-25 transition-all duration-100" onClick={() => {setColorSelected(color); setDropdownOpen(false)}}>{color}</div>)
                     }
