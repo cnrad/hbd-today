@@ -67,6 +67,7 @@ const Home = () => {
             case "orange":
                 setBackgroundGradient("bg-gradient-to-br from-yellow-700 via-yellow-600 to-yellow-400");
                 break;
+                
             case "pink-blue":
                 setBackgroundGradient("bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500");
                 break;
