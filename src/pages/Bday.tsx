@@ -3,6 +3,10 @@ import ConfettiExplode from "../components/Confetti";
 import { useHistory } from "react-router-dom";
 import Confetti from 'react-confetti';
 
+//add share with others button/container at bottom after 5-10 seconds?
+
+
+
 const Bday = () => {
   let history = useHistory();
 
@@ -16,7 +20,7 @@ const Bday = () => {
   let from = query.from;
   let qColor = query.color;
 
-  if(!name || !from || !qColor || !["red", "green", "blue", "purple", "orange"].includes(qColor)) return(
+  if(!name || !from || !qColor || !["red", "green", "blue", "purple", "orange", "pink-blue"].includes(qColor)) return(
     <motion.div className="z-1 text-white bg-black w-screen h-screen flex flex-col items-center justify-center">
       <div className="z-2 text-5xl font-bold mb-8">
         Error: Invalid/Missing query params
@@ -47,6 +51,9 @@ const Bday = () => {
 
     case "orange":
       color = "bg-gradient-to-br from-yellow-700 via-yellow-600 to-yellow-400";
+      break;
+    case "pink-blue":
+      color = "bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500";
       break;
   }
 
@@ -89,11 +96,11 @@ const Bday = () => {
 
   return (
     <>
-      <div className={"w-screen h-screen flex "+color+" items-center justify-center flex-col"}>
-        <motion.div initial="init" animate="load" variants={ParentContainer} className={"z-1 text-white mb-12 w-full h-auto flex items-center justify-center"}>
-          <motion.div variants={ChildrenElems} className="wordLine text-3xl z-2 md:text-5xl font-bold">Happy&nbsp;</motion.div>
-          <motion.div variants={ChildrenElems} className="wordLine text-3xl z-2 md:text-5xl font-bold">Birthday,&nbsp;</motion.div>
-          <motion.div variants={ChildrenElems} className="wordLine text-3xl z-2 md:text-5xl font-bold">{name}!</motion.div>
+      <div className={"w-screen h-screen flex "+color+" items-center justify-center flex-col overflow-hidden"}>
+        <motion.div initial="init" animate="load" variants={ParentContainer} className={"z-1 text-white mb-12 w-full h-auto flex items-center justify-center md:flex-row flex-col"}>
+          <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Happy&nbsp;</motion.div>
+          <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Birthday,&nbsp;</motion.div>
+          <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">{name}!</motion.div>
         </motion.div>
         <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5, ease: "easeInOut"}}} className=" text-white z-2 text-xl md:text-2xl italic">From {from}</motion.div>
       </div>
