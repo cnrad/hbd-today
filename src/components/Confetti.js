@@ -31,7 +31,7 @@ export default function ConfettiExplode({
       },
       ticks: 300
     });
-  }, []);
+  });
 
   return (
     <div ref={ref} className="confetti">
