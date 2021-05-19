@@ -50,51 +50,31 @@ const Home = () => {
         switch(color) {
             case "green":
                 setBackgroundGradient("bg-gradient-to-br from-green-600 via-green-500 to-green-400");
-                break;
-
-            case "red":
-                setBackgroundGradient("bg-gradient-to-br from-red-600 via-red-500 to-red-400");
-                break;
-
-            case "blue":
-                setBackgroundGradient("bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400");
-                break;
-
-            case "purple":
-                setBackgroundGradient("bg-gradient-to-br from-purple-700 via-purple-600 to-purple-400");
-                break;
-
-            case "orange":
-                setBackgroundGradient("bg-gradient-to-br from-yellow-700 via-yellow-600 to-yellow-400");
-                break;
-
-            case "pink-blue":
-                setBackgroundGradient("bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500");
-                break;
-        }
-
-        switch(color) {
-            case "green":
                 setMenuColor("bg-green-600");
                 break;
 
             case "red":
+                setBackgroundGradient("bg-gradient-to-br from-red-600 via-red-500 to-red-400");
                 setMenuColor("bg-red-500");
                 break;
 
             case "blue":
+                setBackgroundGradient("bg-gradient-to-br from-blue-700 via-blue-500 to-blue-400");
                 setMenuColor("bg-blue-600");
                 break;
 
             case "purple":
+                setBackgroundGradient("bg-gradient-to-br from-purple-700 via-purple-600 to-purple-400");
                 setMenuColor("bg-purple-700");
                 break;
 
             case "orange":
+                setBackgroundGradient("bg-gradient-to-br from-yellow-700 via-yellow-600 to-yellow-400");
                 setMenuColor("bg-yellow-600");
                 break;
 
             case "pink-blue":
+                setBackgroundGradient("bg-gradient-to-br from-blue-800 via-purple-600 to-pink-500");
                 setMenuColor("bg-purple-700");
                 break;
         }
