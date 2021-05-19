@@ -147,7 +147,7 @@ const Home = () => {
     }
 
     return (
-        <motion.div id="backgroundCont" className={`${backgroundGradient} font-segoeui w-screen h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20`}>
+        <motion.div id="backgroundCont" className={`${backgroundGradient} md:overflow-hidden font-segoeui w-screen h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20`}>
             <motion.div initial="init" animate="load" variants={parentAnim} className="flex flex-col items-center justify-center">
                 <motion.h1 variants={childAnim} className="text-4xl md:text-5xl text-center font-bold text-white mb-6">🎉 hbd.today 🎉</motion.h1>
                 <motion.h2 variants={childAnim} className="px-4 md:px-0 text-2xl text-center text-white">send a simple, fun, virtual birthday card!</motion.h2>
@@ -173,7 +173,7 @@ const Home = () => {
 
                 <motion.button className="outline-none text-white text-xl rounded-lg items-center justify-center border-2 border-solid border-white px-10 py-4 hover:bg-white hover:text-purple-400 hover:border-0 transition-all" onClick={generateUrl}>Generate Card</motion.button>
 
-                <motion.div className="outline-none font-bold p-4 absolute left-1/2 transform -translate-x-1/2 bottom-10 text-white bg-red-600 opacity-0 transition-opacity duration-500" id="errorBox"></motion.div>
+                <motion.div className="outline-none font-bold p-4 absolute left-1/2 transform -translate-x-1/2 bottom-10 text-white rounded-md bg-red-600 opacity-0 transition-opacity duration-500" id="errorBox"></motion.div>
 
             </motion.div>
         </motion.div>
