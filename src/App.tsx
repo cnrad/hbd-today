@@ -5,6 +5,7 @@ import PageNotFound from "./pages/404";
 
 function App() {
   return(
+
     <Router>
       <Switch> 
         <Route exact path='/' component={Home}></Route>
@@ -12,6 +13,7 @@ function App() {
         <Route exact path='/*' component={PageNotFound}></Route>
       </Switch>
     </Router>
+
   )
 }
 

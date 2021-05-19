@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import ConfettiExplode from "../components/Confetti";
 import { useHistory } from "react-router-dom";
 import Confetti from 'react-confetti';
 
-//add share with others button/container at bottom after 5-10 seconds?
-
-
+//animation - add background elements fading in and out, birthday emojis
 
 const Bday = () => {
   let history = useHistory();
@@ -86,24 +85,48 @@ const Bday = () => {
     }
   }
 
+  const copyToClipboard = () => {
+
+    const el = document.createElement('textarea');
+    el.value = window.location.href;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+
+    document.querySelector("#copyLink")!.innerHTML = "📋 Copied!";
+    setTimeout(() => {
+      document.querySelector("#copyLink")?.classList.add("opacity-0");
+    }, 1000);
+
+  };
+
+  setTimeout(() => {
+    document.querySelector("#copyLink")?.classList.remove("opacity-0");
+  }, 4 * 1000);
+
   let stagger = 0;
   setTimeout(() => {
     document.querySelectorAll(".wordLine").forEach(elem => {
     setTimeout(() => {elem.classList.add("animate-bounce")}, stagger)
       stagger += 250;
     })
-  }, 850)
+  }, 950)
 
   return (
     <>
-      <div className={"w-screen h-screen flex "+color+" items-center justify-center flex-col overflow-hidden"}>
+      <div className={"font-segoeui w-screen h-screen flex "+color+" items-center justify-center flex-col overflow-hidden"}>
         <motion.div initial="init" animate="load" variants={ParentContainer} className={"z-1 text-white mb-12 w-full h-auto flex items-center justify-center md:flex-row flex-col"}>
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Happy&nbsp;</motion.div>
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Birthday,&nbsp;</motion.div>
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">{name}!</motion.div>
         </motion.div>
         <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1.5, ease: "easeInOut"}}} className=" text-gray-100 z-2 text-xl md:text-2xl italic">From {from}</motion.div>
+        <motion.div id="copyLink" onClick={copyToClipboard} className="absolute cursor-pointer bottom-20 text-white z-2 text-md md:text-lg opacity-0 transition-all duration-300">
+        🔗 Copy Link to Share
+        </motion.div>
       </div>
+      
       <ConfettiExplode angle="45" >
         <div className="absolute top-3/4 left-0" />
       </ConfettiExplode>

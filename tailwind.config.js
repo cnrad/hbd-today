@@ -8,7 +8,10 @@ module.exports = {
       },
       fontSize: {
         'bigfont': '12rem',
-       }
+      },
+      fontFamily: {
+        'segoeui': ['Segoe UI', 'sans-serif']
+      },
     },
   },
   variants: {
