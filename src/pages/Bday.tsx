@@ -114,7 +114,7 @@ const Bday = () => {
 
   return (
     <>
-      <div className={"font-segoeui w-screen h-screen flex "+color+" items-center justify-center flex-col md:overflow-hidden"}>
+      <div className={"font-segoeui w-screen h-screen flex "+color+" items-center justify-center flex-col overflow-hidden"}>
         <motion.div initial="init" animate="load" variants={ParentContainer} className={"z-1 text-white mb-12 w-full h-auto flex items-center justify-center md:flex-row flex-col"}>
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Happy&nbsp;</motion.div>
           <motion.div variants={ChildrenElems} className="wordLine md:mb-0 mb-4 text-3xl z-2 md:text-5xl font-bold">Birthday,&nbsp;</motion.div>

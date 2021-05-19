@@ -168,8 +168,8 @@ const Home = () => {
                     }
                 </div>
 
-                <motion.input className="w-52 md:w-auto outline-none text-xl placeholder-gray-200 placeholder-opacity-50 text-white text-center mt-12 mb-10 p-2 bg-gray-800 bg-opacity-0 border-b-2 border-solid border-gray-300 items-center justify-center focus:border-white focus:border-b-4 transition-all" id="nameInput" type="text" placeholder="Recipient's name"></motion.input>
-                <motion.input className="w-52 md:w-auto outline-none text-xl placeholder-gray-200 placeholder-opacity-50 text-white text-center mb-16 p-2 bg-gray-800 bg-opacity-0 border-b-2 border-solid  border-gray-300 items-center justify-center focus:border-white focus:border-b-4 transition-all" id="fromInput" type="text" placeholder="Your name"></motion.input>
+                <motion.input className="w-52 md:w-auto rounded-none outline-none text-xl placeholder-gray-200 placeholder-opacity-50 text-white text-center mt-12 mb-10 p-2 bg-gray-800 bg-opacity-0 border-b-2 border-solid border-gray-300 items-center justify-center focus:border-white focus:border-b-4 transition-all" id="nameInput" type="text" placeholder="Recipient's name"></motion.input>
+                <motion.input className="w-52 md:w-auto rounded-none outline-none text-xl placeholder-gray-200 placeholder-opacity-50 text-white text-center mb-16 p-2 bg-gray-800 bg-opacity-0 border-b-2 border-solid  border-gray-300 items-center justify-center focus:border-white focus:border-b-4 transition-all" id="fromInput" type="text" placeholder="Your name"></motion.input>
 
                 <motion.button className="outline-none text-white text-xl rounded-lg items-center justify-center border-2 border-solid border-white px-10 py-4 hover:bg-white hover:text-purple-400 hover:border-0 transition-all" onClick={generateUrl}>Generate Card</motion.button>
 
