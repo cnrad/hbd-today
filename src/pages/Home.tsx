@@ -147,7 +147,7 @@ const Home = () => {
     }
 
     return (
-        <motion.div id="backgroundCont" className={`${backgroundGradient} md:overflow-hidden font-segoeui w-screen h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20`}>
+        <motion.div id="backgroundCont" className={`${backgroundGradient} font-segoeui pt-24 pb-24 flex-shrink w-full h-full md:w-screen md:h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20`}>
             <motion.div initial="init" animate="load" variants={parentAnim} className="flex flex-col items-center justify-center">
                 <motion.h1 variants={childAnim} className="text-4xl md:text-5xl text-center font-bold text-white mb-6">🎉 hbd.today 🎉</motion.h1>
                 <motion.h2 variants={childAnim} className="px-4 md:px-0 text-2xl text-center text-white">send a simple, fun, virtual birthday card!</motion.h2>
