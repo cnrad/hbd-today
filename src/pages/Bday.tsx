@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import ConfettiExplode from "../components/Confetti";
 import { useHistory } from "react-router-dom";
 import Confetti from 'react-confetti';
